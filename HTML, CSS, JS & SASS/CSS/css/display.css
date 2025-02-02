@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    font-size: 2rem;
+}
+ul{
+    background-color: #333;
+    /* display: none; */
+    color: whitesmoke;
+    text-align: right;
+    padding: 0.5rem;
+    list-style-type: none;
+}
+li{
+    display: inline-block;
+    margin-inline: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* p{
+    background-color: lightgray;
+}
+.opposite{
+    background-color: #333;
+    color: whitesmoke;
+    display: inline-block;
+     margin-top: 60px;
+    padding-top: 20px;
+    padding-bottom: 70px;
+} */

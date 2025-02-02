@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>One Piece Anime</title>
+    <!-- Meta tags-->
+    <meta name="Description" content="html learning" />
+    <meta name="keywords" content="syntax, semantics, sample" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="CSS/style.css"
+      <!--
+      <link
+      rel="stylesheet"
+      type="text/css"
+      href="CSS/style.css"
+    />
+    -->
+  </head>
+
+  <body>
+    <!-- Paragraph-->
+    <p>
+      <strong
+        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore
+        cumque totam eveniet omnis nemo, ex veritatis officiis aspernatur nam
+        dolor repellendus, aliquid quod dignissimos, sequi excepturi laboriosam
+        doloribus neque iure!</strong
+      >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt
+      similique unde maiores qui odio saepe illum, porro dicta minus quasi.
+      Voluptate omnis maiores dicta quia voluptates <br />
+      <a href="http://google.com" target="_blank"
+        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
+        asperiores rerum ab error odio unde impedit natus. Tempora modi magni
+        ab, maiores recusandae, facilis fugit error aspernatur sit minima
+        deleniti?</a
+      >maxime illo vel illum.
+    </p>
+    <p>
+      <figure>
+        <figcaption>sample code</figcaption>
+        <p>
+          <code>&lt;h1&gt; Hello World! &lt;h1&gt;</code>
+        </p>
+      </figure>
+    </p>
+    <!-- em & emtities -->
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt
+      molestias, beatae possimus dignissimos aut facilis magni reprehenderit.
+      Debitis, id cum molestias <em>blaaaaah!!!!</em>officiis, vero
+      <em>accusamus</em>
+      <br />
+      &lt;
+      <br />
+      &gt;
+      <br />
+      &copy;
+      <br />
+      atque repudiandae voluptate modi quae velit.
+      <img
+        src="Images/1.jpg"
+        alt="Image Unavailable"
+        width="400px"
+        height="200px"
+        loading="lazy"
+      />
+    </p>
+
+    <!-- LIST-->
+    <ul>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+      <li>List Item</li>
+    </ul>
+    <br /><br /><br />
+
+    <!-- distorted list -->
+    <dl>
+      <dt>Aaaaaaaaaaaaaaaaaaa</dt>
+      <dd>bbbbbbbbbb</dd>
+      <dt>Bbbbbbbbbbbbbbbbbbb</dt>
+      <dd>bbbbbbbbbb</dd>
+      <dt>Bbbbbbbbbbbbbbbbbbb</dt>
+      <dd>bbbbbbbbbb</dd>
+    </dl>
+    <br /><br /><br />
+
+    <table>
+      <thead>
+        <caption>
+          My Table
+        </caption>
+      </thead>
+      <tbody>
+        <tr>
+          <th>c1</th>
+          <th>c2</th>
+        </tr>
+        <tr>
+          <td>123454646</td>
+        </tr>
+        <tr>
+          <td>1asddfdg</td>
+          <!-- <td>1asddfdg</td> -->
+        </tr>
+        <tr>
+          <td>1333333333</td>
+          <td>13333333333</td>
+        </tr>
+        <tr>
+          <td>135346547</td>
+          <td>156547547</td>
+        </tr>
+        <tr>
+          <td rowspan="2">say what</td>
+          <td>135346547</td>
+        </tr>
+        <tr>
+          <td>135346547</td>
+        </tr>
+        <tr>
+          <td colspan="2">now what</td>
+        </tr>
+        <tr>
+          <td>135346547</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="2">End of table</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <article>
+      <h2>Contact Me</h2>
+      <p>I'd like to hear from you</p>
+
+      <form action="https://httpbin.org/get" method="get">
+        <fieldset>
+          <legend>Personal Info</legend>
+          <p>
+            <label for="firstName">First Name: </label>
+            <input
+              type="text"
+              name="firstName"
+              id="firstName"
+              placeholder="Amy"
+            />
+          </p>
+          <p>
+            <label for="lasttName">Last Name: </label>
+            <input
+              type="text"
+              name="lasttName"
+              id="lasttName"
+              placeholder="Snow"
+            />
+          </p>
+          <p>
+            <label for="password">Password: </label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </p>
+          <p>
+            <label for="phone">Phone: </label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              pattern="[0-9]{5}[0-9]{5}"
+              placeholder="+91-XXXXX-XXXXX"
+            />
+          </p>
+          <p>
+            <label for="phone">Favourite Decade: </label>
+            <input
+              type="number"
+              name="favDecade"
+              id="favDecade"
+              min="1998"
+              step="5"
+              value="2000"
+              max="2022"
+            />
+          </p>
+          <p>
+            <label for="coffee">Favourite Bevarage: </label>
+            <select name="coffee" id="coffee" multiple size="5">
+              <optgroup label="Soft Drinks">
+                <option value="mirinda">Mirinda</option>
+                <option value="coke">Coke</option>
+                <option value="soda">Soda</option>
+              </optgroup>
+              <optgroup label="Fruit Juice">
+                <option value="pomogrenateJuice">Pomogrenate Juice</option>
+                <option value="mangoShake">Mango Shake</option>
+                <option value="bananaShake">Banana Shake</option>
+              </optgroup>
+            </select>
+          </p>
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>What is your favourite food?</legend>
+
+          <p>
+            <input type="radio" name="food" id="momos" value="momos" />
+            <label for="momos">Momos</label>
+          </p>
+          <p>
+            <input type="radio" name="food" id="pizza" value="pizza" />
+            <label for="pizza">Pizza</label>
+          </p>
+          <p>
+            <input type="radio" name="food" id="eggroll" value="eggroll" />
+            <label for="eggroll">Egg Roll</label>
+          </p>
+          <p>
+            <input
+              type="radio"
+              name="food"
+              id="fry chicken"
+              value="fry chicken"
+            />
+            <label for="fry chicken">Fry Chicken</label>
+          </p>
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>Do you have a pet?</legend>
+          <p>
+            <input type="checkbox" name="pets" value="cow" id="cow" />
+            <label for="cow">Cow</label>
+          </p>
+          <p>
+            <input type="checkbox" name="pets" value="dog" id="dog" />
+            <label for="dog">Dog</label>
+          </p>
+          <p>
+            <input type="checkbox" name="pets" value="cat" id="cat" />
+            <label for="cat">Cat</label>
+          </p>
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>Send Me A Note</legend>
+          <p>
+            <label for="message">Your Message</label>
+            <br />
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Enter your message here..."
+            ></textarea>
+          </p>
+        </fieldset>
+        <p>
+          <button type="submit">Submit</button>
+          <button
+            type="submit"
+            formaction="https://httpbin.org/post"
+            formmethod="post"
+          >
+            Post
+          </button>
+          <button type="reset">Reset</button>
+        </p>
+      </form>
+    </article>
+    <form action=""></form>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <!-- Table-->
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Empl. ID</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rajeev</td>
+          <td>1953196</td>
+        </tr>
+        <tr>
+          <td>Chandan</td>
+          <td>1953198</td>
+        </tr>
+      </tbody>
+    </table>
+    <!--Forms-->
+
+    <!--Button-->
+    <button>Bang Me</button>
+    <br />
+    <!-- loading lazy -->
+    <figure>
+      <img
+        src="Images/3.jpg"
+        alt="3rd image"
+        width="400"
+        height="200"
+        loading="lazy"
+      />
+      <figcaption>Mountains</figcaption>
+    </figure>
+    <img
+      src="Images/2.jpg"
+      alt="Image Unavailable"
+      width="400px"
+      height="200px"
+      loading="lazy"
+    />
+    <a href="Images/1.jpg" target="_blank"
+      ><img
+        src="Images/1.jpg"
+        alt="Image Unavailable"
+        width="400px"
+        height="200px"
+    /></a>
+    <!--Quotations-->
+
+    <div style="margin-top: 500px"></div>
+    ;
+  </body>
+</html>

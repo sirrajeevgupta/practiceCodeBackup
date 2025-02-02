@@ -1,0 +1,39 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-size: 1rem;
+}
+.left {
+  float: left;
+  background-color: #333;
+  color: whitesmoke;
+  width: 20vw;
+  height: 20vw;
+  padding: 1rem;
+  margin: 1rem;
+}
+.right {
+  float: right;
+  background-color: #333;
+  color: whitesmoke;
+  width: 20vw;
+  height: 20vw;
+  padding: 1rem;
+  margin: 1rem;
+}
+.bleft {
+  background-color: bisque;
+  color: #333;
+  display: flow-root;
+}
+.bright {
+  background-color: bisque;
+  color: #333;
+  /* overflow: auto; old method */
+  display: flow-root;
+}
+p {
+  padding: 1rem;
+}

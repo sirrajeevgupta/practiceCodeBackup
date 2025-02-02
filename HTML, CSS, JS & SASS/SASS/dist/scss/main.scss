@@ -1,0 +1,43 @@
+@import "./resets";
+@import "./variables";
+
+@function weight($font-name) {
+  @return map-get($font-weights, $font-name);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin darkMode($switch) {
+  @if ($switch==false) {
+    background: lighten($primary-color, 100);
+    color: darken($text-color, 100);
+  }
+}
+
+body {
+  background: $primary-color;
+  color: $text-color;
+}
+
+.main {
+  width: 80%;
+  margin: 0 auto;
+  @include flexCenter(column);
+
+  .main__paragraph {
+    font-weight: weight(bold);
+
+    &:hover {
+      color: pink;
+    }
+  }
+}
+
+.theme {
+  @include darkMode(true);
+}

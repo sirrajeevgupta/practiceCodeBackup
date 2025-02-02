@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+/* Begin Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  img { display: block; }
+  /* End Reset */
+
+body{
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+    background-color: aliceblue;
+    
+    background-image: url("../Images/bubbles.png"), linear-gradient(to left, steelblue,#fff);
+    background-repeat: repeat-y, no-repeat;
+    background-position: right center;
+    background-size: 20%, cover;
+}
+.clip{
+    font-weight: 800;
+    font-size: 18rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-image: url("../Images/scenic-2200x1331.png");
+    background-size: 100%;
+    background-position: center;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: rgba(0, 0, 0, 0);
+}
+/* 
+.example{
+    margin-top: 1rem;
+    border: 2px solid red;
+    padding-left: 20px;
+}
+.example img{
+    width: 25%;
+    height: auto;
+} */
+.offscreen{
+    position: absolute;
+    left: -14000px;
+}
+.container{
+    background-color: rgb(251, 210, 156);
+    background-image: url(../images/map-2176x1451.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.hero{
+    border: 2px solid #000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+
+    background-color: hsla(0, 0%, 100%, 0.35);
+
+    /* background-image: url(../images/map-2176x1451.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+.h1{
+    font-size: 500%;
+    color: aliceblue;
+    text-shadow: 2px 2px 5px #000;
+    /* background-color: hsla(0, 0%, 0%, 0.403);
+    padding: 0.25rem;
+    border-radius: 10px; */
+}
+.profile-pic-figure {
+    width: 35%;
+  }
+  
+  .profile-pic-figure img {
+    width: 100%;
+    height: auto;
+    min-width: 100px;
+    border: 5px double gray;
+    border-radius: 50%;
+  }
+.nowrap{
+    white-space: nowrap;
+}

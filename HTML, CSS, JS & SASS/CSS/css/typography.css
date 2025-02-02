@@ -1,0 +1,22 @@
+body {
+  padding: 10%;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+}
+input,
+button {
+  font: inherit;
+}
+
+.try {
+  background-color: rgb(163, 229, 163);
+  box-shadow: 5px 10px 10px 5px black;
+  /* box-shadow: 50px 50px grey;
+  box-shadow: 20px 20px 10px grey;
+  box-shadow: 20px 20px 50px grey;
+  box-shadow: 20px 20px 50px 15px grey;
+  box-shadow: 20px 20px 20px 10px red;
+  box-shadow: 20px 20px 20px 10px blue;
+  box-shadow: 20px 20px 50px 10px pink inset;
+  box-shadow: none; */
+}

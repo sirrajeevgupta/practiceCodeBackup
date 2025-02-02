@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    max-width: 100vw;
+    max-width: 100vh;
+    font-size: 1.2rem;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+main,.flexCenter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-grow: 1;
+    min-height: 100vh;
+}
+input{
+    margin-top: 0.5rem;
+    height: 2rem;
+    width: 20rem;
+    border-radius: 5px;
+}
+.format{
+    display: none;
+}
+p{
+    margin-top: 2rem;
+}
+.citySection{
+    display: none;
+}
+.invalid{
+    background-color: rgb(241, 150, 150);
+}
+.block{
+    display: block;
+}
