@@ -1,0 +1,1 @@
+'var' is function scoped. That is if given a choice between choosing globally defined value and value defined inside function or its block, it'll chose value defined in function or its block.

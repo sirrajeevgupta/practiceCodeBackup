@@ -1,5 +1,5 @@
 /*
-//      ||  MODULES
+!     ||  MODULES
 import playGuitar from "./guitars.js";
 import { shredding as shred, plucking as pluck } from "./guitars.js";
 import User from "./user.js";
@@ -25,7 +25,7 @@ shred();
 pluck();
 
 
-//      ||  WEB STORAGE APIs
+!     ||  WEB STORAGE APIs
 
 const arr=["eat", "sleep", "gym", "code"];
 console.log(arr);
@@ -55,7 +55,7 @@ window.localStorage.clear();
 console.log(window.localStorage.getItem("myLocalStorage"));
 console.log(window.localStorage.length);
 
-//      ||  DOM MANIPULATION
+!     ||  DOM MANIPULATION
 
 const view1 = document.getElementById("view1");
 console.log(view1);
@@ -64,17 +64,17 @@ console.log(view2)
  const view2 = document.getElementsByClassName("view2");
 console.log(view2) */
 
-//      ||  ARRAY
+//!  ARRAY
 
 /* pop;
 unshift;
 shift;
-splice - (delete, replace, add)  - in between th array 
-delete myArray[1];
-slice(x,y) - gives a part of array
-reverse
-array.join() - returns a string of an array elements seperated by comma
-string.split(",")
+.splice(startIndex, endIndex(if provided 0, it'll insert, the value provided as 3rd parameter), replaceValue)  - modify values in btw the array 
+.slice(startIndex, endIndex(value present not included), replaceValue)  - return a new array 
+delete myArray[1] - not recomended as deleted value is replaced by an 'undefined' value
+.reverse() - reverses the array
+.join() - returns a string of an array elements separated by comma
+string.split(",") - works on STRING, & will create a new array seperated by indicated delimeter
 
 myArr = ["Rajeev", 25, "Bangalore","Introvert", "Missionary", true, 11];
 console.log(myArr);
@@ -103,7 +103,7 @@ console.log(myArr);
 
 // var is function scoped
 
-// Functions
+!Functions
 
 function getUserNameFromEmail(email) {
   return email.slice(0, email.indexOf("@"));
