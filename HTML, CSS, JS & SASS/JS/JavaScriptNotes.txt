@@ -1,1 +1,15 @@
 'var' is function scoped. That is if given a choice between choosing globally defined value and value defined inside function or its block, it'll chose value defined in function or its block.
+
+
+how to declare an emptry Array:
+let arr =[]
+
+
+how to declare an emptry Array of fixed size:
+let arr = new Array(n) // n is the size
+
+
+how to initialize an array with the same value for all items:
+
+ let coloredSock = new Array(n).fill(x)  // n is the fixed size & x is the value
+ for ex: let arr= new Array(10).fill(1)  //  creates an array of 10 items having value of 1 each
