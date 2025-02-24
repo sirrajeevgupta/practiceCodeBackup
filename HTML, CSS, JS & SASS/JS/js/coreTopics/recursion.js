@@ -77,15 +77,28 @@ const possibleSubstring = (str) => {
     i,
     j;
 
-  for (i = 0; i <= str.length; i++) {
-    arr.push(str.substring(0, i));
-
-    {
-      for (j = i + 1; j < str.length; j++) {
-        arr.push(str.substring(0, i) + str[j]);
-      }
+  for (i = 0; i < str.length; i++) {
+    for (j = i + 1; j <= str.length; j++) {
+      arr.push(str.slice(i, j));
     }
   }
+
   return arr;
 };
-console.log('Possible substrings are:', possibleSubstring('ABC'));
+//
+//console.log('Possible substrings are:', possibleSubstring('ABCD'));
+
+var count1 = 0,
+  count2 = 0;
+for (var i = 0; i < 3; i++) {
+  try {
+    if (i == 2) {
+      xxxxx();
+    }
+  } catch (e) {
+    count1++;
+  } finally {
+    count2++;
+  }
+}
+console.log(count1, count2);

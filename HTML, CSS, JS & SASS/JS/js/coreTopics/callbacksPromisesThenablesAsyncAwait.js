@@ -15,7 +15,7 @@ function myCalculator(num1, num2) {
 
 //Promises
 //Promises can have 3 state => Pending, Resolves, Rejected
-
+*/
 const myPromise = new Promise((resolve, reject) => {
   const error = false;
 
@@ -44,15 +44,17 @@ myPromise
   })
   .then((newValue) => {
     console.log(newValue);
-  }).catch(err=>{
-    console.log(err)}); //! a promise is handeled using thenables */
-
+  })
+  .catch((err) => {
+    console.log(err);
+  }); //! a promise is handeled using thenables */
+/*
 //  Async/Await
 
-const response = async () => {
+/* const response = async () => {
   const response = await fetch('http://jsonplaceholder.typicode.com/users');
   const data = await response.json();
   data.forEach((user) => console.log(user));
 };
 
-response();
+response(); */
