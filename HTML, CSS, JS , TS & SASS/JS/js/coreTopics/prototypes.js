@@ -12,9 +12,8 @@ const musician = {
   plays: true,
 };
 
-musician.__proto__ = person; //! legacy code/Old way
-
-Object.setPrototypeOf(musician, person); // !modern war
+musician.__proto__ == person; //! legacy way/old way
+Object.setPrototypeOf(musician, person); //! modern way
 console.log(musician.plays);
 console.log(musician.alive);
 
@@ -39,7 +38,7 @@ function Flower(type) {
   this.size = 'large';
 }
 Flower.prototype = function () {
-  `It smells good`;
+  return `It smells good`;
 };
 const marigold = new Flower('Home');
 console.log(marigold);

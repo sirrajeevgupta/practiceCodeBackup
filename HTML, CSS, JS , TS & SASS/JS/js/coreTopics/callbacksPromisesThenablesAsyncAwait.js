@@ -1,17 +1,20 @@
-//! Callabcks, Promises, Thenables, Async/Await
+//! Callbacks, Promises, Thenables, Async/Await
 
 //callback
 /* 
 function myDisplayer(some) {
-  console.log(some);
+  document.getElementById("demo").innerHTML = some;
 }
 
-function myCalculator(num1, num2) {
+function myCalculator(num1, num2, myCallback) {
   let sum = num1 + num2;
-  myDisplayer(sum);
+  myCallback(sum);
 }
 
-//myCalculator(5, 5);
+myCalculator(5, 5, myDisplayer);
+
+//In the example above, myDisplayer is a called a callback function.
+//It is passed to myCalculator() as an argument.
 
 //Promises
 //Promises can have 3 state => Pending, Resolves, Rejected
@@ -30,7 +33,7 @@ console.log(myPromise); //! a promise is returned
 
 const myNewPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve('Next Promise Resolved!');
+    resolve('Next Promise Resolved!!');
   }, 3000);
 });
 

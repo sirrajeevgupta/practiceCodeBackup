@@ -296,4 +296,104 @@ const uniqueCharStr = (str) => {
     ? 'String has unique characters'
     : "Doesn't contains unique charcaters";
 };
-console.log(uniqueCharStr('rajev pOo'));
+//console.log(uniqueCharStr('rajev pOo'));
+
+//? Possible sub array sum
+
+function subarraySum(arr) {
+  // Write your code here
+  let myArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length + 1; j++) {
+      myArr.push(arr.slice(i, j));
+    }
+  }
+
+  let flattenedArr = myArr.flat(Infinity);
+  console.log(flattenedArr);
+  let sum = flattenedArr.reduce((sum, item) => sum + item);
+
+  return sum;
+}
+//console.log(subarraySum([4, 5, 6]));
+
+//? Two arrays passed to one function, then remove the elements from the source array that are present in another array
+
+const filterSourceArrary = (arr1, arr2) => {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i])) {
+      arr1.splice(i, 1);
+      i--;
+    }
+  }
+  return arr1;
+};
+/* console.log(
+  filterSourceArrary(
+    [325, 34, 43, 6, 5, 6, 547, 65, 7],
+    [11, 12, 32, 2, 3, 4, 3554, 46, 7]
+  )
+); */
+
+//? Find unique element
+
+const uniqueElement = (arr) => {
+  const element = arr.find(
+    (element) => arr.indexOf(element) === arr.lastIndexOf(element)
+  );
+  return element;
+};
+//console.log(uniqueElement([1, 1, 3, 6, 67, 3, 7, 7]));
+
+//? Remove dublicate elements from an array
+
+const removeDublicate = (arr) => {
+  return arr.filter(
+    (element) => arr.indexOf(element) === arr.lastIndexOf(element)
+  );
+};
+//console.log(removeDublicate([1, 2, 3, 4, 4, 5, 5, 6, 7, 6, 1, 0]));
+
+//? In a array of strings having a sentence you have to remove the special characters
+
+const removeSpecial = (arr) => {
+  for (let j = 0; j < arr.length; j++) {
+    let arrFromStr = arr[j].split('');
+    for (let i = 0; i < arrFromStr.length; i++) {
+      if (
+        arrFromStr[i] === '%' ||
+        arrFromStr[i] === '@' ||
+        arrFromStr[i] === '$' ||
+        arrFromStr[i] === '*' ||
+        arrFromStr[i] === '&' ||
+        arrFromStr[i] === '^'
+      ) {
+        arrFromStr.splice(i, 1);
+        i--;
+      }
+    }
+
+    arr[j] = arrFromStr.join('');
+  }
+
+  return arr;
+};
+//console.log(removeSpecial(['this%', 'this@cv', 'dgdfy*g', '&&dvxd&']));
+
+//? An array of object was given with name and Id and you have to display the id only
+
+const omitArray = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    delete arr[i].name;
+  }
+  return arr;
+};
+console.log(
+  omitArray([
+    { name: 'Rajeev', id: 1 },
+    { name: 'Shashank', id: 2 },
+    { name: 'Rahul', id: 3 },
+    { name: 'Amit', id: 4 },
+  ])
+);

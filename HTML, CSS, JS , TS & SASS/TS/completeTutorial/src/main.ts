@@ -1,22 +1,234 @@
-//*!  || CHAPTER - 6 (Classes)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//*!  || CHAPTER - 7 ()
 
 
 /*
+//*!  || CHAPTER - 7 (Index Signatures & Keyof Assertions)
+
+// interface transactionsObj {
+//     [index: string]: number
+// }
+
+interface transactionsObj {
+    [index: string]: number
+    pizza: number,
+    books: number,
+    job: number
+}
+
+const todaysTransaction: transactionsObj = {
+    pizza: -10,
+    books: -5,
+    job: 50
+}
+
+console.log(todaysTransaction.pizza)
+console.log(todaysTransaction['pizza'])
+
+const prop: string = 'pizza'
+console.log(todaysTransaction[prop])
+
+
+const todaysNet = (transactions: transactionsObj) => {
+
+    let total = 0;
+
+    for (const item in transactions) {
+        total += transactions[item]
+    }
+    return total
+}
+console.log(todaysNet(todaysTransaction))
+//console.log(todaysTransaction['dev'])
+
+
+interface Student {
+    //[key: string]: string | number | number[] | undefined
+    name: string,
+    GPA: number,
+    classes?: number[]
+}
+const student: Student = {
+    name: "Rajeev",
+    GPA: 7.8,
+    classes: [100, 200]
+}
+
+//console.log(student.test)
+
+for (const key in student) {
+    console.log(`${key} : ${student[key as keyof Student]}`)
+
+}
+
+Object.keys(student).map(key => {
+    console.log(`${key}: ${student[key as keyof typeof student]}`)
+})
+
+const logStudentKey = (student: Student, key: keyof typeof student) => {
+    console.log(`student ${key}: ${student[key as keyof typeof student]}`)
+}
+
+logStudentKey(student, 'GPA')
+
+
+// interface Incomes {
+//     [index: string]: number
+// }
+
+type Streams = 'salary' | 'bonus' | 'sidehustle'
+
+type Incomes = Record<Streams, number>
+
+const monthlyIncomes: Incomes = {
+
+    salary: 500,
+    bonus: 100,
+    sidehustle: 250
+}
+
+for (const revenue in monthlyIncomes) {
+    console.log(monthlyIncomes[revenue as keyof Incomes])
+}
+
+
+//*!  || CHAPTER - 6 (Classes)
+
+class Coder {
+
+    constructor(public name: string,
+        private age: number,
+        public isIntrovert: boolean,
+        protected lang: string = 'TS',
+        protected isAdult: boo
+        lean = true,
+    ) {
+
+        this.name = name
+        this.age = age
+        this.isAdult = isAdult
+        this.isIntrovert = isIntrovert
+    }
+
+    public introduce() {
+        console.log(`Hey, my name is ${this.name}. I'm a ${this.age} years old ${this.age > 18 ? 'adult' : 'non-adult'},and I code in ${this.lang}.`)
+    }
+}
+
+const myCoder = new Coder('Rajeev', 26, true)
+
+myCoder.introduce()
+// console.log(myCoder.lang)
+// console.log(myCoder.age)
+
+class WebDev extends Coder {
+
+    constructor(
+        public computer: string,
+        name: string,
+        age: number,
+        isIntrovert: boolean,
+    ) {
+        super(name, age, isIntrovert)
+        this.computer = computer
+    }
+
+    public getLang() {
+        return `I code in ${this.lang}`
+    }
+}
+
+const myWebDEv = new WebDev('Windows', 'Amit', 16, true)
+
+myWebDEv.introduce()
+console.log(myWebDEv.getLang())
+
+interface Musician {
+    name: string
+    age: number
+    isIntrovert: boolean
+    play(action: string): string
+}
+
+class Guitarist implements Musician {
+
+    name: string
+    age: number
+    isIntrovert: boolean
+
+    constructor(name: string, age: number, isIntrovert: boolean) {
+        this.name = name
+        this.age = age
+        this.isIntrovert = isIntrovert
+    }
+
+    play(action: string) {
+        return `${this.name} ${action} the guitar`
+    }
+}
+
+const newMus = new Guitarist('Rajeev', 26, true)
+console.log(newMus.play("strums"))
+///////////////////////////////////////////////////////////////
+
+class Peeps {
+
+    static count: number = 0;
+
+    static getCount() {
+        return Peeps.count
+    }
+
+    public id: number;
+
+    constructor(public name: string) {
+        this.name = name
+        this.id = ++Peeps.count
+    }
+}
+
+
+const Harry = new Peeps('Harry');
+const ron = new Peeps('ron');
+const marry = new Peeps('marry');
+
+console.log(Peeps.count)
+console.log(Harry.id)
+console.log(marry.id)
+console.log(ron.id)
+
+//////////////////////////////////////////////////////////////////////////
+
+
+class Bands {
+
+    dataState: string[]
+    constructor() {
+        this.dataState = []
+    }
+
+    get data(): string[] {
+
+        return this.dataState
+    }
+
+    set data(value: string[]) {
+        if (Array.isArray(value) && value.every(elem => typeof elem === "string")) {
+            this.dataState = value
+            return
+        } else {
+            throw new Error("Params are not an array of strings")
+        }
+    }
+}
+
+const myBand = new Bands()
+myBand.data = ['rg', 'rrrey', 'rtey']
+console.log(myBand.data)
+myBand.data = [...myBand.data, 'new band']
+console.log(myBand.data)
+//myBand.data = ['Van helen', 453]
+
+
 //*!  || CHAPTER - 4 (Type Assertions)
 
 type one = string
