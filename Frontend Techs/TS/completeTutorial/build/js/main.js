@@ -1,7 +1,127 @@
-//*!  || CHAPTER - 7 ()
-
-
+"use strict";
+//*!  || CHAPTER - 9 (UTILITY TYPES)
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const fetchUsers = () => __awaiter(void 0, void 0, void 0, function* () {
+    const data = yield fetch("https://jsonplaceholder.typicode.com/users").then(res => {
+        return res.json();
+    }).catch(err => {
+        if (err instanceof Error)
+            console.log(err.message);
+    });
+    return data;
+});
+fetchUsers().then(users => console.log(users));
 /*
+//*!  || CHAPTER - 8 (GENERICS)
+console.log("sfwe")
+const stringEcho = (arg: string): string => arg;
+const echo = <T>(arg: T): T => arg;
+
+const isObj = <T>(arg: T): boolean => {
+    return (typeof arg === "object" && !Array.isArray(arg) && arg !== null);
+};
+
+console.log(isObj(true))
+console.log(isObj('John'))
+console.log(isObj([35234, 56, 34, 654, 4]))
+console.log(isObj({ qrf: 35 }))
+console.log(isObj(null))
+
+const isTrue = <T>(arg: T): { arg: T, is: boolean } => {
+
+    if (Array.isArray(arg) && !arg.length)
+        return { arg, is: false }
+
+    if (isObj(arg) && !Object.keys(arg as keyof T).length)
+        return { arg, is: false }
+
+    return { arg, is: !!arg }
+}
+
+console.log(isTrue(false))
+console.log(isTrue(0))
+console.log(isTrue(true))
+console.log(isTrue(1))
+console.log(isTrue('Rajeev'))
+console.log(isTrue(''))
+console.log(isTrue(null))
+console.log(isTrue(undefined))
+console.log(isTrue({}))
+console.log(isTrue({ name: 'Rajeev' }))
+console.log(isTrue([]))
+console.log(isTrue([1, 2, 3]))
+console.log(isTrue(NaN))
+console.log(isTrue(-0))
+
+interface BooleanCheck<T> {
+    value: T,
+    is: boolean
+}
+
+const isTrueCheck = <T>(arg: T): BooleanCheck<T> => {
+
+    if (Array.isArray(arg) && !arg.length)
+        return { value: arg, is: false }
+
+    if (isObj(arg) && !Object.keys(arg as keyof T).length)
+        return { value: arg, is: false }
+
+    return { value: arg, is: !!arg }
+}
+console.log(isTrueCheck(-23))
+
+
+interface HasId {
+    id: number
+}
+
+const processUser = <T extends HasId>(user: T): T => {
+    return user
+}
+
+console.log(processUser({ name: "Rajeev", id: 34 }))
+//console.log(processUser({ name: "Rajeev" }))
+
+
+
+class StateObject<T> {
+    private data: T
+
+    constructor(value: T) {
+        this.data = value
+    }
+
+    get state(): T {
+        return this.data
+    }
+
+    set state(value: T) {
+        this.data = value
+
+    }
+}
+
+const store = new StateObject("Rajeev")
+console.log(store.state)
+//store.state = 325
+console.log(store.state)
+
+const newStore = new StateObject<(string | number | boolean)[]>(["Pankaj", 325, "SDGFSDG"])
+console.log(newStore.state)
+newStore.state = [325, "wsqfrwe"]
+console.log(newStore.state)
+
+
+
+
 //*!  || CHAPTER - 7 (Index Signatures & Keyof Assertions)
 
 // interface transactionsObj {
@@ -405,7 +525,6 @@ exampleObj.prop1 = "raj"
     active?: boolean,
     albums: (string | number)[]
 } */
-
 /*
 interface Guitarist {
     name?: string
@@ -436,7 +555,7 @@ const greetGuitarist = (guitarist: Guitarist) => {
 console.log(greetGuitarist(JP))
 
 
-//Enum 
+//Enum
 
 enum Grade {
     U = 1,
