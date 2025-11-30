@@ -91,8 +91,8 @@ const isSubstringUsingNestedArray = (str1, str2) => {
   isSubstringUsingNestedArray(s1, s2)
 ); */
 
-//? Anagram string search
 
+//? Anagram string search
 const anagramSearch = (subStr, mainStr) => {
   let result = [],
     i,
@@ -115,7 +115,7 @@ let mainStr = 'BACDGABCDA';
 //console.log(anagramSearch(subStr, mainStr));
 
 //? count pairs that sum up to a given number
-let arr = [45, 123, 54, 52, 34, 45, 7, 2, 10, 8, 5, 22, 5, 1, 3435, 3],
+let arr = [45, 124, 54, 52, 124, 7, 0, 2, 10, 8, 5, 22, 5, 1, 9, 3435, 125, 3435],
   number = 10;
 
 //* O(n*n) complexity
@@ -135,44 +135,8 @@ const pairCountWithNestedLoops = (arr, number) => {
   return { count, pairs };
 };
 const result = pairCountWithNestedLoops(arr, number);
-/* console.log(
-  'Total count of pairs that sum up to a given number are:',
-  result.count,
-  '\nAnd the pairs are:',
-  JSON.stringify(result.pairs)
-); */
+//console.log(  'Total count of pairs that sum up to a given number are:',  result.count,  '\nAnd the pairs are:',  JSON.stringify(result.pairs));
 
-//! WRONG - To be corrected
-//* O(n*n) complexity
-const pairCount = (arr, number) => {
-  arr.sort((a, b) => a - b);
-  let count = 0,
-    pairs = [],
-    left = 0,
-    right = arr.length - 1;
-
-  while (left < right) {
-    if (arr[left] + arr[right] === number) {
-      count++;
-      pairs.push([arr[left], arr[right]]);
-      left++;
-      right--;
-    }
-    if (arr[left] + arr[right] < number) {
-      left++;
-    } else {
-      right--;
-    }
-  }
-  return { count, pairs };
-};
-/*const result2 = pairCount(arr, number);
- console.log(
-  'Total count of pairs that sum up to a given number are:',
-  result2.count,
-  '\nAnd the pairs are:',
-  JSON.stringify(result2.pairs) 
-);*/
 
 //? Find the first non-repeating number in a given array.
 let arr2 = [11, 11, 12, 12, 1, 7, 8, 1, 7, 16, 0, 8, 19, 19, 14];
@@ -227,7 +191,7 @@ const nonRepElmntWithFilter = (arr2) => {
 
 //* using higher order function map
 const nonRepElmntWithMap = (arr2) => {
-  const nonRepetitiveElements = arr2.map((item) => {});
+  const nonRepetitiveElements = arr2.map((item) => { });
 };
 
 //* using a frequency object
@@ -251,13 +215,14 @@ const nonRepElmntWithFreqObject = (arr) => {
 };
 //console.log(nonRepElmntWithFreqObject(arr2));
 
-//? Flatten an array
-let arr3 = [1, [2, [[3, false, 4], 5], 6, 'raj', true]];
+
+//? Flatten the array without using built in functions
+let arr3 = [1, [2, [[3, false, null, 4], 5], 6, 'raj', true]];
 
 //* using recursion
 const flatAnArray = (arr, flattenedArr = []) => {
   for (let i = 0; i < arr.length; i++) {
-    if (typeof arr[i] !== 'object') {
+    if (!Array.isArray(arr[i])) {
       flattenedArr.push(arr[i]);
     } else {
       flatAnArray(arr[i], flattenedArr);
@@ -272,7 +237,6 @@ const flatAnArray = (arr, flattenedArr = []) => {
 //console.log(arr3.flat(Infinity));
 
 //? find the duplicate element from an array.
-
 const dublicateElements = (arr) => {
   let result = arr.filter(
     (element) => arr.indexOf(element) !== arr.lastIndexOf(element)
@@ -282,8 +246,8 @@ const dublicateElements = (arr) => {
 };
 //console.log('Dublicate elements are:', dublicateElements(arr2));
 
-//? check if a string has all unique characters without using any additional data structure
 
+//? check if a string has all unique characters without using any additional data structure
 const uniqueCharStr = (str) => {
   const sortedCopy = str.split('').sort().join('');
   let uniqueFlag = true;
@@ -299,7 +263,6 @@ const uniqueCharStr = (str) => {
 //console.log(uniqueCharStr('rajev pOo'));
 
 //? Possible sub array sum
-
 function subarraySum(arr) {
   // Write your code here
   let myArr = [];
@@ -318,8 +281,8 @@ function subarraySum(arr) {
 }
 //console.log(subarraySum([4, 5, 6]));
 
-//? Two arrays passed to one function, then remove the elements from the source array that are present in another array
 
+//? Two arrays passed to one function, then remove the elements from the source array that are present in another array
 const filterSourceArrary = (arr1, arr2) => {
   for (let i = 0; i < arr1.length; i++) {
     if (arr2.includes(arr1[i])) {
@@ -336,8 +299,8 @@ const filterSourceArrary = (arr1, arr2) => {
   )
 ); */
 
-//? Find unique element
 
+//? Find unique element
 const uniqueElement = (arr) => {
   const element = arr.find(
     (element) => arr.indexOf(element) === arr.lastIndexOf(element)
@@ -346,8 +309,8 @@ const uniqueElement = (arr) => {
 };
 //console.log(uniqueElement([1, 1, 3, 6, 67, 3, 7, 7]));
 
-//? Remove dublicate elements from an array
 
+//? Remove dublicate elements from an array
 const removeDublicate = (arr) => {
   return arr.filter(
     (element) => arr.indexOf(element) === arr.lastIndexOf(element)
@@ -355,8 +318,33 @@ const removeDublicate = (arr) => {
 };
 //console.log(removeDublicate([1, 2, 3, 4, 4, 5, 5, 6, 7, 6, 1, 0]));
 
-//? In a array of strings having a sentence you have to remove the special characters
 
+//? remove duplicate elements from an array using two loops without using any inbuilt methods and Set collection also
+const removeDublicate2 = (arr) => {
+
+  let i, j, result = []
+
+  for (i = 0; i < arr.length; i++) {
+    let dublicate = false
+
+    for (j = 0; j < result.length; j++) {
+      if (result[j] === arr[i]) {
+        dublicate = true
+        break
+      }
+    }
+
+    if (!dublicate) {
+      result.push(arr[i])
+    }
+  }
+
+  return result
+}
+//console.log(removeDublicate2(arr))
+
+
+//? In a array of strings having a sentence you have to remove the special characters
 const removeSpecial = (arr) => {
   for (let j = 0; j < arr.length; j++) {
     let arrFromStr = arr[j].split('');
@@ -389,11 +377,244 @@ const omitArray = (arr) => {
   }
   return arr;
 };
-console.log(
-  omitArray([
-    { name: 'Rajeev', id: 1 },
-    { name: 'Shashank', id: 2 },
-    { name: 'Rahul', id: 3 },
-    { name: 'Amit', id: 4 },
-  ])
-);
+//console.log(omitArray([{ name: 'Rajeev', id: 1 }, { name: 'Shashank', id: 2 }, { name: 'Rahul', id: 3 }, { name: 'Amit', id: 4 },]));
+
+
+//? Convert an array of objects into a grouped object by age:
+// 	Input:
+// 	[{id:1,name:"a1", age:16}, {id:2,name:"a2",age:18}, {id:3,name:"a3",age:16}, {id:4,name:"a4",age:15}]
+// 	Output:
+// 	{16: ["a1", "a3"], 15: ["a4"], 18: ["a2"]}
+
+const groupedObject = (arr) => {
+  let go = {}
+  for (let i = 0; i < arr.length; i++) {
+
+    go[arr[i].age] ? go[arr[i].age].push(arr[i].name) : go = { ...go, [arr[i].age]: [arr[i].name] }
+  }
+
+  return go
+}
+//console.log(groupedObject([{ id: 1, name: "a1", age: 16 }, { id: 2, name: "a2", age: 18 }, { id: 3, name: "a3", age: 16 }, { id: 4, name: "a4", age: 15 }]))
+
+
+//? Count repeated words in a sentence except for a banned word
+
+const wordCount = (sntnc, bannedWord) => {
+
+  const arr = sntnc.split(" ");
+  let count = 0, repeatedWordsObj = {}
+
+  arr.forEach((word) => {
+
+    if (arr.indexOf(word) !== arr.lastIndexOf(word) && word !== bannedWord) {
+      count++
+      repeatedWordsObj[word] = repeatedWordsObj[word] ? repeatedWordsObj[word] + 1 : 1
+    }
+  })
+
+  return repeatedWordsObj
+}
+//console.log(wordCount("This is a sentence again again This a", "banned"))
+
+const wordOccurance = (sntnc, bannedWord) => {
+  let countObj = {}, wordArr = sntnc.toLowerCase().split(" ")
+
+  for (let word of wordArr) {
+    if (word !== bannedWord) countObj[word] = countObj[word] ? countObj[word] + 1 : 1
+  }
+
+  return countObj
+
+}
+//console.log(wordOccurance("This is a sentence again again is this a", "is"))
+
+
+//? Problem to find pairs of numbers from an array that sum to zero
+//* (O(n*n) time complexity
+let arr1 = [45, 123, 54, 52, 34, -45, 45, 7, 0, 2, 10, 8, 5, -7, 9, 3435, 3]
+const conditionalPair = (arr) => {
+
+  let i, j, pairs = []
+
+  for (i = 0; i < arr.length; i++) {
+    for (j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === 0) {
+        pairs.push([arr[i], arr[j]])
+      }
+    }
+  }
+
+  return pairs
+}
+//console.log(conditionalPair(arr1))
+
+// *(O(n) time complexity
+const conditionalPair2 = (arr) => {
+  let pairs = [], seen = new Set(), i
+
+  for (let num of arr) {
+
+    if (seen.has(-num)) {
+      pairs.push([num, -num])
+    }
+    seen.add(num)
+  }
+  return pairs
+}
+//console.log(conditionalPair2(arr1))
+
+
+//? 2nd largest element in array using one loop
+const secondLargest = (arr) => {
+
+  let first = -Infinity, second = -Infinity
+
+  if (arr.length < 2) return "Insuffcient array length"
+
+  for (let num of arr) {
+    if (num > first) {
+      second = first
+      first = num
+    }
+    else if (num > second && num < first) {
+      second = num
+    }
+  }
+  return second === -Infinity ? "No second largest elemnt exist" : second
+}
+//console.log(secondLargest(arr))
+
+
+//? Rotate an array with k using only one for Loop
+const rotateArrayByIndex = (arr, k) => {
+
+  k = k % arr.length //ensures rotation works even if k is larger than the array length.
+  // k = ((k % n) + n) % n; // Normalize negative k
+  let rotatedArr = []
+
+  for (let i = 0; i < arr.length; i++) {
+    let newIndex = (i + k) % arr.length
+    //let newIndex = (i - k + arr.length) % arr.length // left roattion
+    rotatedArr[newIndex] = arr[i]
+  }
+  return rotatedArr
+}
+//console.log(rotateArrayByIndex(arr, 2))
+
+//* without using an array or using built in methods (some issue with negative input)
+
+const rotateArray = (arr, rotateBy) => {
+  const n = arr.length;
+  // Handle cases where rotateBy is larger than array length or negative
+  rotateBy = rotateBy % n;
+  if (rotateBy < 0) {
+    rotateBy += n; // Convert negative rotation to positive
+  }
+
+  // Slice the array into two parts and concatenate them in the rotated order
+  return arr.slice(rotateBy).concat(arr.slice(0, rotateBy));
+}
+//console.log(rotateArray(arr, -2))
+
+
+//? Merge the two array 
+const mergeArray = (arr1, arr2) => {
+  let result = []
+
+  for (let i = 0; i < arr1.length; i++) {
+    result.push(arr1[i])
+  }
+
+  for (let i = 0; i < arr2.length; i++) {
+    result.push(arr2[i])
+  }
+  return result
+  //return [...arr1, ...arr2]
+  //return arr1.concat(arr2)
+}
+//console.log(mergeArray([12, 3443], [345646, 547]))
+
+
+//? Reverse a number
+const reverseANumber = (num) => {
+
+  let result = 0;
+  let copy = num;
+
+  while (copy > 0) {
+    let digit = copy % 10;
+    result = result * 10 + digit;
+    copy = Math.floor(copy / 10)
+  }
+
+  return result
+  //return Number(String(num).split('').reverse().join(''))
+}
+//console.log(reverseANumber(123))
+
+
+//*? Write a function that takes:
+/*
+- funcs: Array of async functions,
+- limit: number,
+The function returns a promise When the function is called, the function shall start executing the async functions, but with only limit number of functions at a time. So at a given time, only limit number of async functions are being executed concurrently. When any one of these async functions is done executing and resolves, next function is added to the executing tasks. This process is repeated until all the async functions have executed and resolved. The function returns the result of all the async functions in an array, in the same order as passed in.*/
+
+const myAsyncFunc = (funcs, limit) => {
+  return new Promise((resolve, reject) => {
+
+    let result = new Array(funcs.length),
+      inProgress = 0,
+      index = 0
+
+    const runNext = () => {
+
+      if (index === funcs.length && inProgress === 0) {
+        return resolve(result)
+      }
+
+      while (index < funcs.length && inProgress < limit) {
+
+        const currentIndex = index
+        const fn = funcs[currentIndex]
+        index++
+        inProgress++
+
+        Promise.resolve()
+          .then(fn)
+          .then(value => {
+            result[currentIndex] = value
+          })
+          .catch(reject)
+          .finally(() => {
+            inProgress--
+            runNext()
+          }
+          )
+      }
+
+    }
+    runNext()
+  })
+}
+
+const wait = (val, t) => () => new Promise((resolve) => setTimeout(() => resolve(val), t))
+
+let asyncArr = [
+  wait("A", 1000),
+  wait("B", 2000),
+  wait("C", 3000),
+  wait("D", 4000),
+  wait("E", 5000)
+]
+
+myAsyncFunc(asyncArr, 3000).then(console.log)
+
+
+
+//? . Practical live reactJs question. Create two button which on click 5 different input box should open and on delete All button all records should be deleted. every individual record contains delete button which on click will delete that particular record.
+//? create a circle on each click and remove bg color of circle when clicked on it.
+//? what is es 6 ?
+
+
+//? Typescript

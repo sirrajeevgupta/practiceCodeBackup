@@ -15,6 +15,13 @@ body {
   height: 100vh;
 }
 
+.alignToCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -34,4 +41,36 @@ body {
 button {
   font-size: 25px;
   padding: 2px;
+}
+
+.card {
+
+  flex-direction: column;
+  gap: 1rem;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.cardConatiner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: royalblue;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.cardConatiner li {
+  list-style: none;
 }

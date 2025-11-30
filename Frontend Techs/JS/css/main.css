@@ -49,15 +49,19 @@ main {
 .height100 {
   height: 100px;
 }
+
 .purple {
   background-color: purple;
 }
+
 .blue {
   background-color: blue;
 }
+
 .darkblue {
   background-color: #00008b;
 }
+
 .black {
   background-color: #000;
 }
@@ -225,4 +229,24 @@ and display:flex for the example you want to see. */
   font-size: 1.25rem;
   padding: 0.75rem;
   border-radius: 10px;
-} 
+}
+
+button {
+  padding: 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+input {
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+#view4 {
+  height: 400vh;
+  min-height: 100vh;
+  display: flex;
+  gap: 2rem;
+
+}
