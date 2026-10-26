@@ -29,7 +29,7 @@ const myPromise = new Promise((resolve, reject) => {
   }
 });
 
-console.log(myPromise); //! a promise is returned
+//console.log(myPromise); //! a promise is returned
 
 const myNewPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -61,3 +61,43 @@ myPromise
 };
 
 response(); */
+
+//! Cancelling a promise
+//* approach - 1 - Using AbortController (Recommended for built-in APIs)
+/* 1. Create an AbortController instance.
+2. Pass the signal from the controller to the API call.
+3. Call controller.abort() when you want to cancel the operation. The promise will then reject with an AbortError */
+
+
+const controller = new AbortController();
+const signal = controller.signal;
+
+fetch('http://jsonplaceholder.typicode.com/users', { signal })
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => {
+    if (err.name === "AbortError") {
+      console.log("Request cancelled");
+    }
+  });
+
+// Cancel the promise
+controller.abort();
+
+
+//* approach - 2 - Ignore the result (Soft cancel)
+
+let cancelled = false;
+
+const promise = new Promise(resolve => {
+  setTimeout(() => resolve("Done"), 3000);
+});
+
+promise.then(result => {
+  if (cancelled) return;
+  console.log(result);
+});
+
+// Cancel
+cancelled = true;
+

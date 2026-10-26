@@ -1,46 +1,31 @@
-var TimeLimitedCache = function () {
-  this.myObject = {};
-};
-
-TimeLimitedCache.prototype.set = function (key, value, duration) {
-  if (this.myObject.hasOwnProperty(key) === true) {
-    this.myObject[key].value = value;
-    this.myObject[key].duration = duration;
-    clearTimeout(this.myObject[key].timeoutId);
-    this.myObject[key].timeoutId = setTimeout(() => {
-      delete this.myObject[key];
-    }, duration);
-
-    return true;
-  } else {
-    this.myObject[key] = {
-      value: value,
-      duration: duration,
-      timeoutId: setTimeout(() => {
-        delete this.myObject[key];
-      }, duration),
-    };
-
-    return false;
+const mergeAndSort = (arr1, arr2) => {
+  //* through predefined sort function
+  /*   const arrsum = [...arr1, ...arr2];
+  arrsum.sort((a, b) => a - b); */
+  //* through traditional loops
+  /*   const arrsum = [...arr1, ...arr2];
+  let swap = false;
+  for (let i = 0; i < arrsum.length; i++) {
+    for (let j = 0; j < arrsum.length; j++) {
+      if (arrsum[j] > arrsum[j + 1]) {
+        swap = true;
+        [arrsum[j], arrsum[j + 1]] = [arrsum[j + 1], arrsum[j]];
+      }
+    }
+    if (swap === false) break;
+  } */
+  //* least timecomplexity solution (ONLY FOR PRE-SORTED ARRAYS)
+  let arrsum = [],
+    i = 0,
+    j = 0;
+  while (i < arr1.length && j < arr2.length) {
+    if (arr1[i] < arr2[j]) arrsum.push(arr1[i++]);
+    else arrsum.push(arr2[j++]);
   }
+  while (i < arr1.length) arrsum.push(arr1[i++]);
+  while (j < arr2.length) arrsum.push(arr2[j++]);
+
+  return arrsum;
 };
 
-TimeLimitedCache.prototype.get = function (key) {
-  if (this.myObject.hasOwnProperty(key)) {
-    return this.myObject[key].value;
-  } else {
-    return -1;
-  }
-};
-
-TimeLimitedCache.prototype.count = function () {
-  let count = 0;
-  Object.keys(this.myObject).forEach((key) => count++);
-  return count;
-};
-
-const timeLimitedCache = new TimeLimitedCache();
-console.log(timeLimitedCache.set(1, 42, 1000)); // false
-console.log(timeLimitedCache.myObject);
-timeLimitedCache.get(1); // 42
-timeLimitedCache.count(); // 1
+console.log(mergeAndSort([1, 23, 445, 668], [0, 1, 23, 45, 67, 89]));

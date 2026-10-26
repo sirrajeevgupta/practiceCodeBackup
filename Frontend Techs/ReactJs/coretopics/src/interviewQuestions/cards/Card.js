@@ -1,11 +1,8 @@
-import React from 'react'
-import '../../index.css'
-
 const Card = ({ cardId, noOfCards, setNoOfCards }) => {
 
     const handleDeleteCard = (cardId) => {
-        setNoOfCards([...noOfCards.slice(0, -1)])
 
+        setNoOfCards([...noOfCards.filter(id => id !== cardId)])
     };
 
     return (

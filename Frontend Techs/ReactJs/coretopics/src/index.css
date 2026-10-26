@@ -41,16 +41,11 @@ body {
 button {
   font-size: 25px;
   padding: 2px;
+  border-radius: 10px;
+  padding: 3px;
+  font-weight: bold;
 }
 
-.card {
-
-  flex-direction: column;
-  gap: 1rem;
-  height: 100px;
-  width: 100px;
-  background-color: red;
-}
 
 .App {
   display: flex;
@@ -58,19 +53,4 @@ button {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-
-.cardConatiner {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: royalblue;
-  padding: 2rem;
-  gap: 1rem;
-}
-
-.cardConatiner li {
-  list-style: none;
 }

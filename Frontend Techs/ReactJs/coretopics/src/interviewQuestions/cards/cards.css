@@ -1,0 +1,35 @@
+.cardConatiner {
+    margin: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: royalblue;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.card {
+
+    flex-direction: column;
+    gap: 1rem;
+    height: 100px;
+    width: 100px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: blue;
+    border-radius: 10px;
+}
+
+.card button {
+    border-radius: 5px;
+    padding: 3px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.cardConatiner li {
+    list-style: none;
+}

@@ -608,13 +608,21 @@ let asyncArr = [
   wait("E", 5000)
 ]
 
-myAsyncFunc(asyncArr, 3000).then(console.log)
+//myAsyncFunc(asyncArr, 3000).then(console.log)
 
 
+//*? Reverse a string & pallindrome
+
+const reverseOfAString = (str) => {
+
+  let reverseStr = str.split("").reverse().join("")
+
+  console.log(str === reverseStr ? "Pallindrome" : "Not a Pallindrome")
+}
+reverseOfAString("olo")
 
 //? . Practical live reactJs question. Create two button which on click 5 different input box should open and on delete All button all records should be deleted. every individual record contains delete button which on click will delete that particular record.
 //? create a circle on each click and remove bg color of circle when clicked on it.
-//? what is es 6 ?
 
 
 //? Typescript
